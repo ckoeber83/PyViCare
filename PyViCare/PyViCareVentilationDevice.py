@@ -19,6 +19,14 @@ class VentilationDevice(Device):
     @handleNotSupported
     def getVentilationReason(self) -> str:
         return str(self.getProperty("ventilation.operating.state")["properties"]["reason"]["value"])
+        
+    @handleNotSupported
+    def getVentilationDemand(self) -> str:
+        return str(self.getProperty("ventilation.operating.state")["properties"]["demand"]["value"])
+
+    @handleNotSupported
+    def getVentilationReason(self) -> str:
+        return str(self.getProperty("ventilation.operating.state")["properties"]["reason"]["value"])
 
     @handleNotSupported
     def getVentilationModes(self) -> list[str]:
