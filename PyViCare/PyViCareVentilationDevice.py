@@ -221,3 +221,11 @@ class VentilationDevice(Device):
     @deprecated(reason="renamed, use getVentilationSchedule", version="2.40.0")
     def getSchedule(self):
         return self.getVentilationSchedule()
+
+    @handleNotSupported
+    def getventilation_volumeFlow_current_input(self):
+        return self.getProperty("ventilation.volumeFlow.current.input")["properties"]["value"]["value"]
+
+    @handleNotSupported
+    def getventilation_volumeFlow_current_output(self):
+        return self.getProperty("ventilation.volumeFlow.current.output")["properties"]["value"]["value"]
